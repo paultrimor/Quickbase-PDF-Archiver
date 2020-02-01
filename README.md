@@ -1,18 +1,13 @@
-# SAM-Student-Archiver
-Export SAM Students into individual PDFs containing associated read-only data
+# QuickBase PDF Archiver
+Desktop Application written in NodeJS's Electron framework for downloading and parsing QuickBase records into PDFs. 
 
-## Configuration 
-Before you can run the script, you must load two json variables under the `res` folder. 
-- **users_lookuptable.js** - contains an object of key-value pairs where the key is the sam userId and the value is the readable name and email of user. 
-- **students_lookuptable.js** - contains an object of key-value pairs where the key is the sam_key and the value is an object containing two keys: *student_id* and *usg_key*. 
+## How It Works 
+This program will allow you to export any Table under any Application you have permission to access. Your QuickBase information to download XML files returned from API_DoQuery. Afterwards, it will parse through these files to create PDFs of all records in your selected table. This architecure limits the number of API calls to the number of tables. 
 
-## How to Run 
-1. Run npm install
-2. Use your SAM username and password to access to exporter. 
-3. After login, select the desired school you want to export. 
-4. Select the student child tables you wish to export. 
-5. Select the fields from each table that you want exported. 
-6. Choose range to indexes to export and enter the correct foreign key for each table.
-7. Choose a folder you wish to Export. 
-8. When complete, open the console and run the function convertHtmlToPdf() 
+## Installation Guide 
+There are two ways you can run this program. 
+1. If you are in a hurry and have a windows machine, a one-click installer is available here: 
+2. Clone this repository then run `npm install` and `npm start`. This runs the program in development mode. 
+
+**Note** If you are running this program in development, you can open the console for useful log notes. 
 
