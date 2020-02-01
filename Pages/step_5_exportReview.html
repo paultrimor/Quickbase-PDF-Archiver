@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quickbase PDF Archiver</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body> 
+	<div id="main-section">  
+   		<h4>Export Review</h4>
+
+   		<table>
+   			<tr>
+   				<td>Number of Records:</td><td id="exportList"></td>
+   			</tr>
+   			<tr>
+   				<td>Export Application:</td><td id="applicationSelected"></td>
+   			</tr>
+   			<tr>
+   				<td>Export Table: </td><td id='parentTable'></td>
+   			</tr>
+   			<tr>
+   				<td>Associated Tables:</td><td><ol id="childTables"></ol></td>
+   			</tr>
+   		</table>   
+      
+   		<button id="submit">EXPORT</button>
+	</div>
+    <script src="../Render/exportReview.js"></script>
+</body>
+<script>
+	// Populate UI
+	var sharedObj = remote.getGlobal('sharedObj');		
+	document.getElementById('exportList').innerHTML =
+		sharedObj.exportList.length;
+	document.getElementById('applicationSelected').innerHTML =
+		sharedObj.applicationRepo[sharedObj.applicationSelected].name;
+	document.getElementById('parentTable').innerHTML =
+		sharedObj.tableRepo[sharedObj.tablesSelected[0]].name;
+	var childTables = ""; 
+
+	for( var i = 1; i < sharedObj.tablesSelected.length; i++) {
+		childTables += "<li>"+sharedObj.tableRepo[
+			sharedObj.tablesSelected[i]].name+"</li>"; 
+	}	
+	document.getElementById('childTables').innerHTML = childTables;
+</script>
+</html>

@@ -1,0 +1,50 @@
+@font-face {
+	font-family: Gibson-Regular;
+	src: url('font/Gibson-Regular.ttf');
+}
+
+@font-face {
+	font-family: Gibson-light;
+	src: url('font/Gibson-Light.ttf');
+}
+
+html,body {
+	font-family: 'Gibson-Regular';
+}
+label, input {
+	display: block;	
+}
+
+/** ELement Styles ****************************************************/
+
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 5px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+
+/** Select Table ******************************************************/
+.tableList .option {
+	position: relative;
+	height: 20px;
+	padding: 5px;
+}
+
+.tableList .option label {
+	position: absolute;
+}
+
+.tableList .option input {
+	right: 0px;
+	position: absolute;
+}
+
+.tableList div:nth-child(2n) {
+	background-color: rgb(204, 226, 249);
+}

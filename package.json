@@ -1,0 +1,31 @@
+{
+  "name": "Single-Record-Exporter",
+  "version": "2.0.0",
+  "description": "Exporter for Quickbase",
+  "main": "MAIN.js",
+  "scripts": {
+    "start": "electron main.js",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Tutorial App\"",
+    "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds"
+  },
+  "dependencies": {
+    "async": "^2.6.0",
+    "electron": "^1.7.9",
+    "file-system": "^2.2.2",
+    "filenamify": "^2.0.0",
+    "fs": "0.0.1-security",
+    "html-pdf": "2.2.0",
+    "jquery": "^3.2.1",
+    "phantomjs-prebuilt": "^2.1.16",
+    "request": "^2.83.0",
+    "valid-filename": "^2.0.1",
+    "xmlbuilder": "^9.0.4",
+    "xmldom": "^0.1.27",
+    "xpath": "0.0.24"
+  },
+  "devDependencies": {
+    "devtron": "^1.4.0",
+    "electron-packager": "^9.1.0"
+  }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quickbase PDF Archiver</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>    
+    <div id="main-section">  
+
+        <label for="dominan">Quickbase Domain URL</label>
+        <input type="text" name="domain" id="domain">
+
+        <label for="username" class="h6">Quickbase Username</label>
+        <input type="text" name="username" id="username">
+
+        <label for="password" class="h6">Quickbase Password</label> 
+        <input type="password" name="password" id="password">
+
+        <div id="error"></div>
+        <button id="authBtn" class="btn-success" onclick="submit()">Submit</button>
+    </div>
+<script src="../Render/login.js"></script>
+<script>
+
+function uiDisplayError(errorText, errorDetail) {
+    var errorDisplay = document.getElementById('error');
+    errorDisplay.innerHTML = 
+        "<p>"+errorText+"</p>"+
+        "<p>"+errorDetail+"</p>";
+}
+
+</script>
+</body>
+</html>

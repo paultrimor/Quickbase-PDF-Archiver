@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quickbase PDF Archiver</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body> 
+	<div id="main-section">   
+   		<h2>Table Selection</h2>
+
+      <p>Please Select the table you wish to Export</p>
+   		<div id="parentTableList"></div>
+
+      <hr>
+
+   		<button id="submit" onclick="submit()">Submit</button>
+	</div>
+
+<script src="../Render/selectTables.js"></script>
+<script>
+
+// Parse & Set TableList
+var tableList = 
+  Object.entries(remote.getGlobal('sharedObj').tableRepo); 
+
+// Populate Ui    
+function generateTableListUI(targetDiv, inputType) {      
+  var tableListSelect = document.getElementById(targetDiv);
+  tableListSelect.setAttribute('class', 'tableList');       
+  
+  var ui_label, checkbox, wrapper
+  for (var i = 0; i < tableList.length; i++) {
+      
+      wrapper = document.createElement('div'); 
+        wrapper.className = "option"; 
+
+        ui_label = document.createElement('label'); 
+        ui_label.for = tableList[i][1].dbid;   
+        ui_label.innerHTML = tableList[i][1].name; 
+
+        checkbox = document.createElement("input"); 
+        checkbox.type = inputType;
+        if (inputType == 'radio') {
+          checkbox.setAttribute('name', 'selectedParent')}
+        checkbox.id = tableList[i][1].dbid;
+        checkbox.value = tableList[i][0].name; 
+
+        wrapper.append(ui_label); 
+        wrapper.append(checkbox);
+        tableListSelect.append(wrapper);      
+  }
+}
+
+function querySelectedParent() {
+  var parent = ''; 
+  var selectedParent = document.querySelectorAll(
+    '#parentTableList input[type=radio]'); 
+  
+  for (var i = 0; i < selectedParent.length; i++) {
+    if (selectedParent[i].checked) {
+      parent = selectedParent[i].getAttribute('id'); 
+      }
+    }
+    return parent; 
+}
+
+generateTableListUI('parentTableList', 'radio');
+
+</script>
+</body>
+</html>
