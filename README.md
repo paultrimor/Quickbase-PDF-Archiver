@@ -4,6 +4,8 @@ Desktop Application written in NodeJS's Electron framework for downloading and p
 ## How It Works 
 This program will allow you to export any Table under any Application you have permission to access. Your QuickBase information to download XML files returned from API_DoQuery. Afterwards, it will parse through these files to create PDFs of all records in your selected table. This architecure limits the number of API calls to the number of tables. 
 
+You can view a sample of the output here: http://paultrimor.com/paulncks/quickbase-pdf-archiver/
+
 ## Installation Guide 
 There are two ways you can run this program. 
 1. If you are in a hurry and have a windows machine, a one-click installer is available here: 
