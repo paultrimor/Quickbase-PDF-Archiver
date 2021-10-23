@@ -16,7 +16,7 @@
     "filenamify": "^2.0.0",
     "fs": "0.0.1-security",
     "html-pdf": "2.2.0",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "phantomjs-prebuilt": "^2.1.16",
     "request": "^2.83.0",
     "valid-filename": "^2.0.1",
