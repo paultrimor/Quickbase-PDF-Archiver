@@ -10,7 +10,7 @@
     "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds"
   },
   "dependencies": {
-    "async": "^2.6.0",
+    "async": "^2.6.4",
     "electron": "^1.7.9",
     "file-system": "^2.2.2",
     "filenamify": "^2.0.0",
